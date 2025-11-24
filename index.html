@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>AMARTA PROJECT</title>
+  <meta name="author" content="Velile Vamba">
+  <meta content="" name="lorem100">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  
+
+<!-- Favicons AMARTA -->
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+<link rel="shortcut icon" href="favicon/favicon.ico">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Lato:400,300,700,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/free.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/brand.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/flag.min.css">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+	<style type="text/css">
+		.carousel-item {
+		  height: 60vh;
+		  min-height: 350px;
+		  background: no-repeat center center scroll;
+		  -webkit-background-size: cover;
+		  -moz-background-size: cover;
+		  -o-background-size: cover;
+		  background-size: cover;
+		}
+
+    .main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .wrap {
+  margin: 2rem;
+
+  transform-style: preserve-3d;
+  transform: perspective(100rem);
+
+  cursor: pointer;
+}
+
+.main .container {
+  --rX: 0;
+  --rY: 0;
+  --bX: 50%;
+  --bY: 80%;
+
+ 
+  border: 1px solid var(--background-color);
+  border-radius: 1.6rem;
+  padding: 4rem;
+
+  display: flex;
+  align-items: flex-end;
+
+  position: relative;
+  transform: rotateX(calc(var(--rX) * 1deg)) rotateY(calc(var(--rY) * 1deg));
+
+  background: linear-gradient(hsla(0, 0%, 100%, .1), hsla(32, 57, 84));
+  background-position: var(--bX) var(--bY);
+  background-size: 40rem auto;
+  box-shadow: 0 0 3rem .5rem hsla(0, 0%, 0%);
+
+  transition: transform .6s 1s;
+}
+
+.main .container::before,
+.main .container::after {
+  content: "";
+
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #fff;
+
+  position: absolute;
+  z-index: 2;
+
+  opacity: .6;
+  transition: .3s;
+}
+
+.main .container::before {
+  top: 2rem;
+  right: 2rem;
+
+  border-bottom-width: 0;
+  border-left-width: 0;
+}
+
+.main .container::after {
+  bottom: 2rem;
+  left: 2rem;
+
+  border-top-width: 0;
+  border-right-width: 0;
+}
+
+.main .container--active {
+  transition: none;
+}
+
+.main .container--2 {
+  filter: hue-rotate(80deg) saturate(140%);
+}
+
+.main .container--3 {
+  filter: hue-rotate(160deg) saturate(140%);
+}
+
+.main .container p {
+  color: hsla(0, 0%, 100%, .6);
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.main .wrap:hover .container::before,
+.main .wrap:hover .container::after {
+  width: calc(100% - 4rem);
+  height: calc(100% - 4rem);
+}
+
+.main .abs-site-link {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: hsla(0, 0%, 0%);
+  font-size: 1.6rem;
+} 
+
+/*****************************************/
+.solutions {
+  /* The image used */
+  background-image: url(assets/img/amartabg.png);
+
+  /* Set a specific height */
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.solutions .wrapper{
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+}
+
+.solutions h1{
+  color: #fff;
+  font-weight: normal;
+  text-align: center;
+  font-size: 48px;
+}
+
+.solutions .panels{
+  list-style-type: none;
+  padding: 0;
+}
+
+.solutions .panels li{
+
+  margin: 0;
+  display: block;
+  box-sizing: border-box;
+  float: left;
+}
+
+.solutions .panels li div{
+  padding: 10% 0;
+  text-align: center;
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  height: 50vh;
+}
+
+/*// ANIMATION STYLES //*/
+
+.solutions .panels div.back {
+  transform: rotateY(90deg);
+}
+
+.solutions .panels div.front {
+  position: absolute;
+}
+
+.solutions .panels li:hover div.front {
+  animation: twirl 0.2s ease-in forwards;
+}
+.solutions .panels li:hover div.back {
+  animation: twirl 0.2s 0.2s ease-out forwards reverse;
+}
+
+@keyframes twirl {
+  0%{ transform: rotateY(0deg)}
+  100% {transform: rotateY(90deg)}
+}
+
+.why-us {
+  /* The image used */
+  background-image: url(assets/img/slider-2.jpg);
+
+  /* Set a specific height */
+  min-height: 350px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+	</style>
+</head>
+
+<body>
+
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+        
+        <!-- <h1 class="text-light"><a href="index.html"><span>AMARTA PROJECT</span></a></h1> -->
+        <a href="/"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#header">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Our Work</a></li>
+          <li><a href="#faq">Case Studies</a></li>
+         
+		      <li><a href="#contact">Contact Us</a></li>
+        </ul>
+            
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End #header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section >
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item active" style="background-image: url(assets/img/footer-bg.png)">
+       <div class="carousel-caption hero-caption">
+
+  <h2 class="display-4">PT. Amarta Usaha Sejahtera</h2>
+  <p class="lead">
+    Solusi Profesional Penyedia Jasa Manpower & Event Organizer di Seluruh Indonesia.
+  </p>
+  <p class="lead" style="font-size: 18px;">
+    SPG | SPB | Usher | Operator | Komunitas | Penonton Bayaran <br>
+    Jangkauan: Jakarta, Medan, Palembang, Surabaya, Bandung, Bali, dan kota besar lainnya.
+  </p>
+  <a href="#contact" class="btn btn-primary btn-lg mt-2">Konsultasi Gratis</a>
+</div>
+
+        </div>
+      <!-- Slide Two -->
+<div class="carousel-item" style="background-image: url(assets/img/slider-2.jpg)">
+  <div class="carousel-caption hero-caption">
+
+    <h2 class="display-4">Layanan Manpower & Event Support</h2>
+    <p class="lead">
+      SPG / SPB • Usher / LO • Operator Event • Brand Activation
+      <br>
+      Paid Audience • Komunitas • Crowd Management
+    </p>
+    <a href="#services" class="btn btn-outline-light btn-lg mt-2">Lihat Layanan</a>
+  </div>
+</div>
+
+        <!-- Slide Three - Set the background image for this slide in the line below -->
+    <!-- Slide Three -->
+<div class="carousel-item" style="background-image: url(assets/img/slide3.jpeg)">
+  <div class="carousel-caption hero-caption">
+
+    <h2 class="display-4">Dipercaya Banyak Brand Besar</h2>
+    <p class="lead">
+      Kami telah menangani event nasional & regional bersama
+      <br>
+      GOTO • SASA • Zoetis • Shell • Pertamina • Hyundai
+    </p>
+    <a href="#contact" class="btn btn-primary btn-lg mt-2">Request Penawaran</a>
+  </div>
+</div>
+
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+    </div>
+  </section><!-- #hero -->
+  
+
+  <main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Tentang Kita</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="assets/img/Fapas.png" class="img-fluid" alt="">
+          </div>
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 about-text">
+  <h3>PT. Amarta Usaha Sejahtera</h3>
+
+  <p>
+    adalah perusahaan penyedia jasa manpower profesional dan event support
+    yang berdiri untuk membantu kebutuhan operasional serta aktivitas promosi berbagai brand dan perusahaan.
+  </p>
+  <p>
+    Dengan pengalaman melayani banyak kegiatan nasional hingga regional, kami menyediakan tenaga kerja
+    terlatih untuk mendukung kelancaran event Anda, mulai dari SPG/SPB, usher, operator,
+    brand activation, hingga komunitas dan crowd management.
+  </p>
+  <p>
+    Kami telah bekerja sama dengan berbagai perusahaan besar seperti:
+    <strong>GOTO, SASA, Zoetis, Shell, Pertamina, Hyundai</strong>, dan banyak brand lainnya.
+  </p>
+  <p>
+    Komitmen kami adalah memberikan SDM yang profesional, tepat waktu, berpengalaman,
+    dan berorientasi pada hasil.
+  </p>
+</div>
+
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+ <div class="row">
+
+  <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4">
+    <div class="icon-box">
+      <h4>Event Manpower</h4>
+      <p>
+        SPG, SPB, Usher/LO, Operator Event, Brand Ambassador/Product Advisor,
+        Crowd & Queue Management.
+      </p>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4">
+    <div class="icon-box">
+      <h4>Paid Audience / Penonton Bayaran</h4>
+      <p>
+        Pengadaan penonton untuk event, live show, shooting TV, konten digital,
+        seminar, dan acara lain yang memerlukan crowd.
+      </p>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4">
+    <div class="icon-box">
+      <h4>Komunitas & Mass Gathering</h4>
+      <p>
+        Penyediaan komunitas berbagai segmen (otomotif, teknologi, lifestyle,
+        dancers, kreator, dll) sesuai kebutuhan event/campaign.
+      </p>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4">
+    <div class="icon-box">
+      <h4>Event Support & Handling</h4>
+      <p>
+        Crew setup & teardown, team pelaksana event, runner & logistic support,
+        field coordinator & supervisor.
+      </p>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4">
+    <div class="icon-box">
+      <h4>Nationwide Coverage</h4>
+      <p>
+        Layanan SDM di Jakarta, Medan, Palembang, Bandung, Surabaya,
+        Yogyakarta, Bali, dan kota lain sesuai permintaan klien.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+    </section><!-- End Services Section -->
+
+ <!-- ======= Call To Action Section ======= -->
+<section class="call-to-action" id="clients-approach">
+  <div class="container">
+    <div class="text-center">
+
+      <!-- ======= Clients Grid ======= -->
+      <div class="section-title">
+        <h2 style="color:#fff;">Klien Kami</h2>
+        <p style="color:#fff;">Kami telah dipercaya berbagai brand nasional & multinasional.</p>
+      </div>
+
+      <div class="row text-center clients-row">
+        <div class="col-md-2 col-6 mb-3 client-item">
+          <img src="assets/img/clients/goto.png" class="img-fluid client-logo" alt="GOTO">
+          <strong>GOTO</strong>
+        </div>
+
+        <div class="col-md-2 col-6 mb-3 client-item">
+          <img src="assets/img/clients/sasa.png" class="img-fluid client-logo" alt="SASA">
+          <strong>SASA</strong>
+        </div>
+
+        <div class="col-md-2 col-6 mb-3 client-item">
+          <img src="assets/img/clients/zoetis.png" class="img-fluid client-logo" alt="Zoetis">
+          <strong>Zoetis</strong>
+        </div>
+
+        <div class="col-md-2 col-6 mb-3 client-item">
+          <img src="assets/img/clients/shell.png" class="img-fluid client-logo" alt="Shell">
+          <strong>Shell</strong>
+        </div>
+
+        <div class="col-md-2 col-6 mb-3 client-item">
+          <img src="assets/img/clients/pertamina.png" class="img-fluid client-logo" alt="Pertamina">
+          <strong>Pertamina</strong>
+        </div>
+
+        <div class="col-md-2 col-6 mb-3 client-item">
+          <img src="assets/img/clients/hyundai.png" class="img-fluid client-logo" alt="Hyundai">
+          <strong>Hyundai</strong>
+        </div>
+      </div>
+
+      <p class="text-center mt-2" style="color:#fff;">Dan banyak brand besar lainnya.</p>
+
+      <!-- ======= 3 Phase Cards (punya kamu) ======= -->
+      <div class="container-fluid mt-4">
+        <div class="col-md-12">
+          <div class="row main justify-content-center">
+
+            <div class="wrap wrap--3 col-md-3">
+              <h6 style="color: #fff; text-align: right;">01. Briefing & Kebutuhan Event</h6>
+              <div class="container container--3">
+                <p>
+                  Kami menerima brief klien (jenis event, jumlah SDM, lokasi, jadwal, dan kriteria),
+                  lalu menyepakati kebutuhan sejak awal.
+                </p>
+              </div>
+            </div>
+
+            <div class="wrap wrap--3 col-md-3">
+              <h6 style="color: #fff; text-align: right;">02. Rekrutmen & Penempatan</h6>
+              <div class="container container--3">
+                <p>
+                  Kami siapkan SDM terbaik dari database nasional, briefing/training,
+                  lalu penempatan sesuai role yang dibutuhkan event.
+                </p>
+              </div>
+            </div>
+
+            <div class="wrap wrap--3 col-md-3">
+              <h6 style="color: #fff; text-align: right;">03. Eksekusi & Monitoring</h6>
+              <div class="container container--3">
+                <p>
+                  SDM bekerja sesuai SOP. Koordinator/supervisor memonitor di lapangan
+                  agar event berjalan lancar sampai selesai.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- End 3 Phase Cards -->
+
+    </div>
+  </div>
+</section>
+<!-- End Call To Action Section -->
+
+
+    
+
+    <!-- ======= Case Studies / Studi Kasus Section ======= -->
+<section id="faq" class="solutions">
+  <div class="wrapper">
+    <h1>Studi Kasus</h1>
+
+    <ul class="panels">
+      <div class="row">
+
+        <!-- Case 1 -->
+        <li class="col-md-4">
+          <div class="front" style="background: #203954">
+            <h6>Masalah</h6>
+            <p>
+              Sebuah brand nasional melakukan roadshow dan peluncuran produk di beberapa kota besar.
+              Mereka membutuhkan tim manpower yang seragam kualitasnya, siap kerja cepat, dan mampu
+              menangani interaksi pengunjung yang tinggi di setiap titik event.
+            </p>
+          </div>
+          <div class="back" style="background: #020a20">
+            <h6>Solusi</h6>
+            <p>
+              PT. Amarta Usaha Sejahtera menyiapkan SPG/SPB, usher/LO, operator event, serta field
+              coordinator dari database nasional. Tim kami melakukan briefing & training sebelum hari-H,
+              lalu monitoring lapangan untuk memastikan performa rapi, komunikatif, dan tepat waktu di
+              semua kota.
+            </p>
+          </div>
+        </li>
+
+        <!-- Case 2 -->
+        <li class="col-md-4">
+          <div class="front" style="background: #203954">
+            <h6>Masalah</h6>
+            <p>
+              Tim produksi sebuah live show dan konten digital membutuhkan penonton bayaran yang
+              ramai, tertib, dan responsif untuk mendukung atmosfer acara. Tantangannya adalah
+              menghadirkan crowd sesuai target jumlah, tepat waktu, dan terkoordinasi.
+            </p>
+          </div>
+          <div class="back" style="background: #020a20">
+            <h6>Solusi</h6>
+            <p>
+              Amarta menyediakan layanan Paid Audience lengkap: rekrutmen, pendataan peserta, briefing
+              teknis, serta crowd & queue management. Dengan koordinasi lapangan yang jelas, penonton
+              hadir sesuai jadwal, menjaga ketertiban, dan mendukung jalannya acara sampai selesai.
+            </p>
+          </div>
+        </li>
+
+        <!-- Case 3 -->
+        <li class="col-md-4">
+          <div class="front" style="background: #203954">
+            <h6>Masalah</h6>
+            <p>
+              Sebuah perusahaan otomotif ingin mengadakan mass gathering dan campaign komunitas.
+              Mereka memerlukan komunitas sesuai segmen, sekaligus kru pendukung event untuk setup,
+              handling, dan kelancaran kegiatan di lapangan.
+            </p>
+          </div>
+          <div class="back" style="background: #020a20">
+            <h6>Solusi</h6>
+            <p>
+              PT. Amarta Usaha Sejahtera menyediakan komunitas terkurasi (otomotif, lifestyle, kreator,
+              dll) sesuai kebutuhan brand, ditambah crew event support seperti runner, logistic support,
+              dan supervisor. Hasilnya event berjalan tertata, crowd sesuai target, dan engagement tinggi.
+            </p>
+          </div>
+        </li>
+
+      </div>
+    </ul>
+  </div>
+</section>
+<!-- End Case Studies Section -->
+
+
+   <!-- ======= Standards Section ======= -->
+<section id="standards" class="standards">
+  <div class="container text-center">
+
+    <div class="section-title">
+      <h2>Standar Layanan & Profesionalisme</h2>
+    </div>
+
+    <p class="mb-4">
+      PT. Amarta Usaha Sejahtera memastikan setiap SDM yang kami kirim telah melalui proses seleksi,
+      training, dan briefing agar siap bekerja profesional di lapangan.
+    </p>
+
+    <div class="row justify-content-center">
+
+      <div class="col-md-3 col-6 mb-4">
+        <div class="std-card">
+          <div class="std-icon">🧩</div>
+          <h5>Seleksi Ketat</h5>
+          <p>Rekrutmen cepat dengan kriteria sesuai kebutuhan event.</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6 mb-4">
+        <div class="std-card">
+          <div class="std-icon">🎯</div>
+          <h5>Training & Briefing</h5>
+          <p>SDM dibekali SOP kerja, attitude, dan target brand.</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6 mb-4">
+        <div class="std-card">
+          <div class="std-icon">📍</div>
+          <h5>Monitoring Lapangan</h5>
+          <p>Koordinator/supervisor memastikan event berjalan lancar.</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6 mb-4">
+        <div class="std-card">
+          <div class="std-icon">🤝</div>
+          <h5>Service Guarantee</h5>
+          <p>Profesional, tepat waktu, dan berorientasi hasil.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- End Standards Section -->
+
+
+<section class="why-us" id="why-us">
+  <div class="container">
+    <div class="section-title">
+      <p>Mengapa memilih PT. Amarta Usaha Sejahtera?</p>
+    </div>
+
+    <ul class="why-list">
+      <li><span class="check">✅</span> Tim berpengalaman di industri event & manpower</li>
+      <li><span class="check">✅</span> Database SDM luas dari berbagai kota</li>
+      <li><span class="check">✅</span> Rekrutmen cepat & fleksibel sesuai kebutuhan klien</li>
+      <li><span class="check">✅</span> Kualitas kerja terjamin melalui training & briefing</li>
+      <li><span class="check">✅</span> Harga kompetitif</li>
+      <li><span class="check">✅</span> Terbiasa kolaborasi dengan brand nasional & multinasional</li>
+    </ul>
+
+    <div class="why-cta text-center">
+      <a href="#contact" class="btn btn-light">Request Penawaran / Konsultasi</a>
+    </div>
+  </div>
+</section>
+
+
+  <div class="collapse" id="collapseExample">
+    <div class="col-lg-5 col-md-12">
+      <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+        <div class="form-group">
+          <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+          <div class="validate"></div>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+          <div class="validate"></div>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please tell us why you need a demo" placeholder="Message"></textarea>
+          <div class="validate"></div>
+        </div>
+        <div class="text-center"><button class="btn btn-info" type="submit">Send Request</button></div>
+      </form>
+    </div>
+  </div>
+      </div>
+    </section>
+
+    <!-- ======= Contact Us Section ======= -->
+   <!-- ======= Contact Us Section ======= -->
+<section id="contact" class="contact section-bg">
+  <div class="container">
+    <div class="row">
+
+      <!-- KIRI: Profil + Sosmed -->
+      <div class="col-lg-4 col-md-6">
+        <div class="contact-about">
+          <h3>Amarta Project Agency</h3>
+          <p>Solusi Profesional Penyedia Jasa Manpower & Event Organizer di Seluruh Indonesia.</p>
+
+          <div class="social-links mt-3">
+            <a href="https://wa.me/628111389998" target="_blank" class="whatsapp" title="WhatsApp">
+              <i class="icofont-whatsapp"></i>
+            </a>
+            <a href="mailto:teamamartaproject@gmail.com" class="email" title="Email">
+              <i class="icofont-envelope"></i>
+            </a>
+            <a href="https://www.instagram.com/amartaprojectagency/" target="_blank" class="instagram" title="Instagram">
+              <i class="icofont-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TENGAH: Info kontak -->
+      <div class="col-lg-3 col-md-6">
+        <div class="info">
+          <div>
+            <i class="icofont-phone"></i>
+            <p>+62 811-1389-9998 (WhatsApp)</p>
+          </div>
+
+          <div>
+            <i class="icofont-envelope"></i>
+            <p>teamamartaproject@gmail.com</p>
+          </div>
+
+          <div>
+            <i class="icofont-instagram"></i>
+            <p>@amartaprojectagency</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- KANAN: Form kirim pesan -->
+      <div class="col-lg-5 col-md-12">
+        <form id="contactForm" class="php-email-form">
+          <div class="form-group">
+            <input type="text" name="name" class="form-control" id="name"
+              placeholder="Nama Anda" required />
+          </div>
+
+          <div class="form-group">
+            <input type="email" class="form-control" name="email" id="email"
+              placeholder="Email Anda" required />
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" name="subject" id="subject"
+              placeholder="Subjek" required />
+          </div>
+
+          <div class="form-group">
+            <textarea class="form-control" name="message" id="message" rows="5"
+              placeholder="Tulis pesan Anda..." required></textarea>
+          </div>
+
+          <div class="text-center contact-btns">
+  <button type="button" id="btnSendWA" class="btn btn-success mr-2">
+    Kirim via WhatsApp
+  </button>
+
+  <button type="button" id="btnSendEmail" class="btn btn-light">
+    Kirim via Email
+  </button>
+</div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- End Contact Us Section -->
+
+   
+    
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+     <div class="copyright">
+  &copy; Copyright <strong><span>Amarta Project Agency</span></strong>. All Rights Reserved
+</div>
+
+      
+    </div>
+  </footer><!-- End #footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
